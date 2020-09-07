@@ -1,0 +1,30 @@
+---
+title: "Test de prueba"
+author: "AnibalMatamoros"
+date: "6/9/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = T, warning = T, message = T)
+library(tidyverse)
+library(kableExtra)
+```
+
+## Introducción
+
+### De donde copie los datos 
+
+Estos datos fueron generados de una base de la **IUCN** y sera utilizada para realizar el curso de BIO4022 de siguiente repositorio [Siguiente repositorio](https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-08-18/threats.csv)
+
+```{r}
+plants <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-08-18/plants.csv")
+actions <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-08-18/actions.csv")
+threats <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-08-18/threats.csv")
+
+```
+
+
+## Datos de sudamérica
+
+El número de plantas en america del sur es de `r plants %>% dplyr::filter(continent=="South America")%>% nrow()` muchachonas gostosonas
